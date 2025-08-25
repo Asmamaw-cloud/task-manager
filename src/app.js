@@ -17,4 +17,12 @@ app.get('/', (req, res) => {
   res.send('Task Manager API running...')
 })
 
+// routes
+const authRoutes = require("./routes/auth");
+const taskRoutes = require("./routes/taskRoutes");
+const userRoutes = require("./routes/userRoutes");
+app.use("/api/auth", authRoutes);
+app.use("/api/tasks", taskRoutes);
+app.use("/api/users", userRoutes);
+
 module.exports = app
